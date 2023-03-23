@@ -4,22 +4,22 @@ public class Association<k,v> {
     k llave; 
     v valor; 
 
-    Association(){
+    public Association(){
         llave=null;
         valor = null;
     }
-    Association(k key, v value){
+    public Association(k key, v value){
         llave=key;
         valor = value;
     }
     
   
-    k getK(){
+    public k getK(){
         return llave;
     }
     
    
-    v getV(){
+    public v getV(){
         return valor;
     }
 }

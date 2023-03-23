@@ -4,20 +4,20 @@ public class BinarySearchTree  {
     
     Node root;
 
-    BinarySearchTree() {
+    public BinarySearchTree() {
         root = null;
     }
-    BinarySearchTree(Association<String, String> word) {
+    public BinarySearchTree(Association<String, String> word) {
         root = new Node(word);
     }
 
  
-    void insert(Association<String, String> word) {
+    public void insert(Association<String, String> word) {
         root = insertRec(root, word);
     }
 
 
-    Node insertRec(Node root, Association<String, String> word){
+    public Node insertRec(Node root, Association<String, String> word){
         
         if (root == null) {
             root = new Node(word);
@@ -37,12 +37,12 @@ public class BinarySearchTree  {
         return root;
     }
 
-    void inorder() {
+    public void inorder() {
         inorderRec(root);
     }
 
 
-    void inorderRec(Node root)
+    public void inorderRec(Node root)
     {
         if (root != null) {
             inorderRec(root.left);
@@ -52,12 +52,12 @@ public class BinarySearchTree  {
     }
 
 
-    void deleteKey(Association<String, String> word){
+    public void deleteKey(Association<String, String> word){
         root = deleteRec(root, word);
     }
 
     
-    Node deleteRec(Node root, Association<String, String> word)
+    public Node deleteRec(Node root, Association<String, String> word)
     {
         if (root == null)
             return root;
@@ -82,7 +82,7 @@ public class BinarySearchTree  {
     }
 
    
-    Association<String, String> minValue(Node root){
+    public Association<String, String> minValue(Node root){
         Association<String, String> minv = root.palabra;
         while (root.left != null)
         {
@@ -93,7 +93,7 @@ public class BinarySearchTree  {
     }
   
 
-    String translateKey(String word){
+    public String translateKey(String word){
         Node newNode= null;
         newNode = root;
         newNode = search(newNode, word);
