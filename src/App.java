@@ -34,6 +34,9 @@ public class App {
             while ((st = br.readLine()) != null){
                 setInTree(st);
             }
+
+
+            showTreeInOrder();
             
         } catch (IOException e) {
             System.out.println(e);
@@ -57,6 +60,11 @@ public class App {
 
     }
 
-
+    public void showTreeInOrder(){
+        System.out.println("BINARIO INGLES====================");
+        treeEnglish.inorder();
+        System.out.println("BINARIO FRANCES====================");
+        treeFrench.inorder();
+    }
 
 }
