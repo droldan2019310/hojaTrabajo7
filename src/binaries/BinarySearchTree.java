@@ -46,7 +46,7 @@ public class BinarySearchTree  {
     {
         if (root != null) {
             inorderRec(root.left);
-            System.out.println(root.palabra.getK() + "->" + root.palabra.getV());
+            System.out.println(root.palabra.getK() + " = " + root.palabra.getV());
             inorderRec(root.right);
         }
     }
@@ -93,12 +93,12 @@ public class BinarySearchTree  {
     }
   
 
-    public String translateKey(String word){
+    public String searchWithWord(String word){
         Node newNode= null;
         newNode = root;
         newNode = search(newNode, word);
         if(newNode==null){
-            return word;
+            return "*"+word+"*";
         }
         else{
             return (String)newNode.palabra.getV();

@@ -21,10 +21,10 @@ public class App {
     }
 
     public void start(){
-        readFile();
+        readFileDictionary();
     }
 
-    public void readFile(){
+    public void readFileDictionary(){
         File file = new File("src/dictionary.txt");
         BufferedReader br;
         try {
@@ -37,6 +37,8 @@ public class App {
 
 
             showTreeInOrder();
+
+            readFileText();
             
         } catch (IOException e) {
             System.out.println(e);
@@ -46,6 +48,7 @@ public class App {
 
 
     public void setInTree(String txt){
+        
         String[] values = txt.split(",");
 
         String wordEnglish = values[0];
@@ -66,5 +69,43 @@ public class App {
         System.out.println("BINARIO FRANCES====================");
         treeFrench.inorder();
     }
+
+
+
+    public void readFileText(){
+        File file = new File("src/texto.txt");
+        BufferedReader br;
+        try {
+            br = new BufferedReader(new FileReader(file));
+            
+            String st;
+            while ((st = br.readLine()) != null){
+                translate(st);
+            }
+            
+        } catch (IOException e) {
+            System.out.println(e);
+            System.out.println("ARCHIVO NO ENCONTRADO");
+        }
+    }
+
+
+    public void translate(String string){
+        String[] arraywords = string.split("\\s");
+        String lineTranslated = "";
+        for (String string2 : arraywords) {
+            String wordTranslated = treeEnglish.searchWithWord(string2);
+            if(lineTranslated.equals("")){
+                lineTranslated = wordTranslated;
+            }else{
+                lineTranslated= lineTranslated+" "+wordTranslated;
+            }
+            
+        }
+        System.out.println("TRANSLATE: ===============");
+        System.out.println(lineTranslated);
+        
+    }
+
 
 }
