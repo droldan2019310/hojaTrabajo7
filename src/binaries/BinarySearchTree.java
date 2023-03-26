@@ -1,5 +1,8 @@
 package binaries;
 
+/**
+ * @author Davis Roldan
+ */
 public class BinarySearchTree  {
     
     Node root;

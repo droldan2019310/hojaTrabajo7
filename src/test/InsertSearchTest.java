@@ -4,6 +4,10 @@ import org.junit.Test;
 
 import binaries.Association;
 import binaries.BinarySearchTree;
+
+/**
+ * @author Davis Roldan
+ */
 public class InsertSearchTest {
     @Test 
     public void testInsert(){
