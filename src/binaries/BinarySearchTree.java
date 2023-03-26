@@ -24,11 +24,11 @@ public class BinarySearchTree  {
             return root;
         }
 
-        if(word.getK().compareTo((String) root.palabra.getK())==0){
-            root.palabra = word;
+        if(word.getK().compareTo((String) root.word.getK())==0){
+            root.word = word;
         }
         else{
-            if (word.getK().compareTo((String) root.palabra.getK())<0)
+            if (word.getK().compareTo((String) root.word.getK())<0)
                 root.left = insertRec(root.left, word);
             else{
                 root.right = insertRec(root.right, word);
@@ -46,7 +46,7 @@ public class BinarySearchTree  {
     {
         if (root != null) {
             inorderRec(root.left);
-            System.out.println(root.palabra.getK() + " = " + root.palabra.getV());
+            System.out.println(root.word.getK() + " = " + root.word.getV());
             inorderRec(root.right);
         }
     }
@@ -62,9 +62,9 @@ public class BinarySearchTree  {
         if (root == null)
             return root;
 
-        if (word.getK().compareTo((String)root.palabra.getK())<0)
+        if (word.getK().compareTo((String)root.word.getK())<0)
             root.left = deleteRec(root.left, word);
-        else if (word.getK().compareTo((String)root.palabra.getK())>0)
+        else if (word.getK().compareTo((String)root.word.getK())>0)
             root.right = deleteRec(root.right, word);
 
         
@@ -83,10 +83,10 @@ public class BinarySearchTree  {
 
    
     public Association<String, String> minValue(Node root){
-        Association<String, String> minv = root.palabra;
+        Association<String, String> minv = root.word;
         while (root.left != null)
         {
-            minv = root.left.palabra;
+            minv = root.left.word;
             root = root.left;
         }
         return minv;
@@ -101,15 +101,15 @@ public class BinarySearchTree  {
             return "*"+word+"*";
         }
         else{
-            return (String)newNode.palabra.getV();
+            return (String)newNode.word.getV();
         }
     }
 
 
     public Node search(Node root, String key){
-        if (root==null || ((String) root.palabra.getK()).toUpperCase().compareTo(key.toUpperCase())==0)
+        if (root==null || ((String) root.word.getK()).toUpperCase().compareTo(key.toUpperCase())==0)
             return root;
-        if (((String) root.palabra.getK()).toUpperCase().compareTo(key.toUpperCase())<0)
+        if (((String) root.word.getK()).toUpperCase().compareTo(key.toUpperCase())<0)
         return search(root.right, key);
 
         return search(root.left, key);

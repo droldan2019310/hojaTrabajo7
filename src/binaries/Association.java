@@ -1,25 +1,25 @@
 package binaries;
 
 public class Association<k,v> {
-    k llave; 
-    v valor; 
+    k key; 
+    v value; 
 
     public Association(){
-        llave=null;
-        valor = null;
+        key=null;
+        value = null;
     }
     public Association(k key, v value){
-        llave=key;
-        valor = value;
+        this.key=key;
+        this.value = value;
     }
     
   
     public k getK(){
-        return llave;
+        return key;
     }
     
    
     public v getV(){
-        return valor;
+        return value;
     }
 }
